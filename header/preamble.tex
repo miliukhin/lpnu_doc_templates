@@ -1,0 +1,50 @@
+\documentclass[12pt,oneside]{extreport}
+
+\usepackage{multicol} % багатостовпцевий текст
+\usepackage{indentfirst} % абзаци на початку секцій
+\usepackage{subfiles} % пакет, що полегшує вкладення файлів
+
+\usepackage[a4paper]{geometry}
+\newcommand\Margins
+{
+	\newgeometry{
+	top=1.5cm,
+	bottom=2cm,
+	right=2cm,
+	left=2cm
+	}
+} % Встановлення потрібних відступів
+
+\usepackage[utf8]{inputenc} % input encoding
+\usepackage[T2A]{fontenc} % font encoding
+
+% українізація документа
+\usepackage[english,ukrainian]{babel}
+%(Бібліоґрафія замість Bibliography і т. п.)
+
+%	графіка	%
+\usepackage{graphicx} % для додання картинок
+
+\usepackage{tikz}
+\usetikzlibrary
+{
+	calc,
+	positioning,
+	shapes.geometric,
+	shapes.symbols,
+	shapes.misc
+}
+
+%	Рисунки й таке інше	%
+\usepackage{wrapfig} % для розміщення рисунків безпосередньо в тексті
+\usepackage{caption} % розширення функціоналу підписів
+\usepackage{subcaption} % підпідписи
+
+% Пакети, пов'язані з лістингом
+% --------------------------%
+\usepackage{moreverb} % тюнінгований verbatim
+\let\verbatiminput=\verbatimtabinput % табуляція
+\def\verbatimtabsize{4\relax}
+% --------------------------%
+
+\input{~/Templates/uni/header/baseinfo.tex}
