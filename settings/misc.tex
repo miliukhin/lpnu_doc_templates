@@ -1,0 +1,10 @@
+%\newenvironment{qanda}{\setlength{\parindent}{0pt}}{\bigskip}
+%\newcommand{\Q}{\bigskip\bfseries Q: }
+%\newcommand{\A}{\medskip\par\textbf{A:} \hphantom{2em}\normalfont}
+
+\newcounter{question}
+\setcounter{question}{0}
+
+\newcommand{\question}[1]{\bfseries\item[\refstepcounter{question}\thequestion.] {#1}}
+%\newcommand{\answer}[1]{\item[A\thequestion.] \normalfont#1}
+\newcommand{\answer}[1]{\item[] \normalfont#1}
