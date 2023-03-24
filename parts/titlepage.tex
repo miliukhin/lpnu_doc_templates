@@ -1,0 +1,60 @@
+\newgeometry{top=1cm,bottom=1cm,right=1.5cm,left=1.5cm}
+\newcommand{\LINE}{\rule{\linewidth}{0.4mm}}
+\begin{titlepage}
+	\center
+
+	\textsc{міністерство освіти і науки україни}\\
+	\textsc{національний університет"`львівська політехніка"'}\\
+	\small
+	{Інститут комп'ютерних наук та інформаційних технологій}\\
+	{кафедра \Department}\\
+	[1.5cm]
+	\normalsize
+	%\large
+
+	%\includegraphics[scale=0.45]{$HOME/Templates/lpnu_doc_templates/lpnu_logo.png}\\[1.5cm]
+	\includegraphics[scale=0.45]{$HOME/Templates/lpnu_doc_templates/lpnu_logo.png}\\[1.5cm]
+
+	\iftoggle{Report}
+	{
+		\textsc{\LARGE\bfseries звіт}\\
+		\textsc{ до \Type \, \No\Number}\\
+	}
+	{
+		\textsc{\LARGE\bfseries \Type~\No\Number}\\
+	}
+  з дисципліни: "`\Discipline"'\\
+  %на тему: \\
+
+	\iftoggle{Report}
+	{
+	\LINE\\[0.2cm]
+	\large
+	\textsc{\bfseries \Topic}\\[0cm]
+	\normalsize
+	\LINE\\[1cm]
+	}
+	{
+	\LINE\\[0.2cm] % норм?
+	\large
+		\textsc{\bfseries Варіант \Variant}\\[0cm]
+	\LINE\\[1cm]
+	}
+
+
+	\begin{flushright}
+		\large
+		\textit{Виконав}\\
+		\normalsize
+		\Class \; \textsc{\Author}
+
+		\large
+		\textit{Перевірив}\\
+		\normalsize
+		\Position \; \textsc{\Instructor}
+	\end{flushright}
+
+	\vfill
+	Львів	\the\year{}
+\end{titlepage}
+\Margins

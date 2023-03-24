@@ -1,0 +1,27 @@
+\include{$HOME/Templates/lpnu_doc_templates/settings/preamble}
+%\include{$HOME/Templates/lpnu_doc_templates/settings/font_styles.tex}
+\usepackage{etoolbox}
+
+%	TODO:	рефакторинг	%
+\newtoggle{Report}
+\toggletrue{Report} % якщо true, то титулка як для звіту
+%\renewcommand\Department{<++>}
+
+\newcommand\Type{TYPE}
+\newcommand\Number{NUMBER}
+\newcommand\Discipline{DISCIPLINE}
+\newcommand\Topic{TOPIC}
+
+\newcommand\Class{студент групи \Group}
+\newcommand\Author{\Lname~\Initials}
+\newcommand\Position{POSITION}
+\newcommand\Instructor{INSTRUCTOR}
+\newcommand\Variant{VARIANT}
+
+\begin{document}
+
+\input{$HOME/Templates/lpnu_doc_templates/parts/titlepage.tex}
+
+<++>
+
+\end{document}
