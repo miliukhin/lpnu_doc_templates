@@ -1,10 +1,9 @@
-%\documentclass[12pt,oneside]{extreport}
-\documentclass[12pt,oneside]{extarticle}
 \sloppy
 
 \usepackage{multicol} % багатостовпцевий текст
 \usepackage{indentfirst} % абзаци на початку секцій
 \usepackage{subfiles} % пакет, що полегшує вкладення файлів
+% \usepackage{etoolbox}
 
 \usepackage[a4paper]{geometry}
 \newcommand\Margins
@@ -17,12 +16,29 @@
 	}
 } % Встановлення потрібних відступів
 
-\usepackage[utf8]{inputenc} % input encoding
-\usepackage[T2A]{fontenc} % font encoding
+%	математика	%
+\usepackage{amsmath}
+%\usepackage{mathtools}
 
-% українізація документа
-\usepackage[english,ukrainian]{babel}
-%(Бібліоґрафія замість Bibliography і т. п.)
+\usepackage{breqn} % автоматичне перенесення частин математичних виразів
+\breqnsetup{
+	breakdepth={1},
+	indentstep={8pt},
+	spread={0pt},
+	compact
+}
+
+%	Мовні та шрифтові параметри	%
+\usepackage[ukrainian]{babel} %(Локалізація та переноси)
+
+\usepackage{iftex} % перевірка компілятора
+\ifXeTeX
+	\input{$HOME/Templates/lpnu_doc_templates/settings/font_styles.tex}
+\else
+	\usepackage[utf8]{inputenc} % input encoding
+	\usepackage[T2A]{fontenc} % font encoding
+	\usepackage{textcomp} % provide euro and other symbols
+\fi
 
 %	графіка	%
 \usepackage{graphicx} % для додання картинок
