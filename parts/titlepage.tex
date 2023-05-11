@@ -20,23 +20,23 @@
 		\textsc{ до \Type \, \No\Number}\\
 	}
 	{
-		\textsc{\LARGE\bfseries \Type~\No\Number}\\
+		\textsc{\LARGE\bfseries \Type~\Number}\\
 	}
   з дисципліни: "`\Discipline"'\\
   %на тему: \\
 
-	\iftoggle{Report}
+	\iftoggle{RGR}
+	{
+	\LINE\\[0.2cm] % норм?
+	\large
+		\textsc{\bfseries Варіант \Variant}\\[0cm]
+	\LINE\\[1cm]
+	}
 	{
 	\LINE\\[0.2cm]
 	\large
 	\textsc{\bfseries \Topic}\\[0cm]
 	\normalsize
-	\LINE\\[1cm]
-	}
-	{
-	\LINE\\[0.2cm] % норм?
-	\large
-		\textsc{\bfseries Варіант \Variant}\\[0cm]
 	\LINE\\[1cm]
 	}
 
@@ -48,7 +48,7 @@
 		\Class \; \textsc{\Author}
 
 		\large
-		\textit{Перевірив}\\
+		\textit{Перевірив(ла)}\\
 		\normalsize
 		\Position \; \textsc{\Instructor}
 	\end{flushright}
