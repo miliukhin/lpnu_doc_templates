@@ -29,7 +29,7 @@
 
 %	математика	%
 \usepackage{amsmath}
-%\usepackage{mathtools}
+\usepackage{mathtools}
 
 \usepackage{breqn} % автоматичне перенесення частин математичних виразів
 \breqnsetup{
@@ -50,10 +50,11 @@
 	\usepackage[T2A]{fontenc} % font encoding
 	\usepackage{textcomp} % provide euro and other symbols
 \fi
+\usepackage{microtype}
 
 %	графіка	%
 \usepackage{graphicx} % для додання картинок
-%\graphicspath{{images/}}
+\graphicspath{{images/}}
 
 \usepackage{tikz}
 \usetikzlibrary
@@ -76,6 +77,11 @@
 \let\verbatiminput=\verbatimtabinput % табуляція
 \def\verbatimtabsize{4\relax}
 % --------------------------%
+
+% бібліографія
+\usepackage[backend=biber]{biblatex}
+% style=authoryear-icomp
+\addbibresource{~/Documents/bibliography.bib}
 
 \input{~/Templates/lpnu_doc_templates/settings/baseinfo.tex}
 \input{~/Templates/lpnu_doc_templates/settings/misc.tex} % Q&A
