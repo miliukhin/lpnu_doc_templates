@@ -1,7 +1,7 @@
 ---
 header-includes:
-- \input{$HOME/Templates/lpnu_doc_templates/settings/preamble.tex}
-- \input{$HOME/Templates/lpnu_doc_templates/settings/minted_settings.tex}
+- \input{$UNI/_templates/settings/preamble.tex}
+- \input{$UNI/_templates/settings/minted_settings.tex}
 - \renewcommand\Variant{VARIANT}
 - \newcommand\Date{DAY.MONTH.\the\year}
 - \newcommand\Discipline{DISCIPLINE}
@@ -20,5 +20,5 @@ header-includes:
 - \newcommand\Position{POSITION}
 ---
 
-\input{$HOME/Templates/lpnu_doc_templates/parts/titlepage.tex}
+\input{$UNI/_templates/parts/titlepage.tex}
 <++>
