@@ -5,4 +5,38 @@
 \newcommand\Institute{Інститут комп'ютерних наук та інформаційних технологій}
 \newcommand\Department{САПР}
 \newcommand\Group{ПП-14}
-%\newcommand\Variant{12}
+\newcommand\Variant{12}
+
+\usepackage{xstring}
+
+% ця команда отримує позначення дисципліни та обирає приймача роботи.
+% я написав сценарій, який визначає це позначення за шляхом до поточного каталогу
+% й після ще кількох перевірок генерує шаблон звіту, де заповнене все, крім дати й теми.
+% Звісно, не завжди такий шаблонний метод працює, але тоді можна використати \renewcommand
+\newcommand{\Work}[1]{
+\IfStrEqCase{#1}{
+		{num}{
+			\newcommand\Discipline{Нумерікал мет}
+			\IfStrEqCase{\Type}{
+				{\Lab}{
+					\newcommand\Instructor{<++>}
+				}
+				{\Pract}{
+					\newcommand\Instructor{<++>}
+				}
+			}
+		}
+		{db}{
+			<++>
+		}
+		{stat}{
+			<++>
+		}
+		{os}{
+			<++>
+		}
+		{web}{
+			<++>
+		}
+	}
+}

@@ -1,8 +1,8 @@
 ---
 header-includes:
-- \input{$HOME/Templates/lpnu_doc_templates/settings/preamble_md.tex}
+- \input{$HOME/Templates/lpnu_doc_templates/settings/preamble.tex}
 - \input{$HOME/Templates/lpnu_doc_templates/settings/minted_settings.tex}
-- \newcommand\Variant{VARIANT}
+- \renewcommand\Variant{VARIANT}
 - \newcommand\Date{DAY.MONTH.\the\year}
 - \newcommand\Discipline{DISCIPLINE}
 - \newcommand\Instructor{INSTRUCTOR}
@@ -12,8 +12,8 @@ header-includes:
 - \usepackage{etoolbox}
 - \newtoggle{Report}
 - \toggletrue{Report}
-- \newtoggle{RGR}
-- \togglefalse{RGR}
+- \newtoggle{ShowVar}
+- \togglefalse{ShowVar}
 - \renewcommand\Department{САПР}
 - \newcommand\Class{студент групи \Group}
 - \newcommand\Author{\Lname~\Initials}

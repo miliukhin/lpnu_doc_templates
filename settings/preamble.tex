@@ -3,10 +3,8 @@
 \usepackage{multicol} % багатостовпцевий текст
 \usepackage{indentfirst} % абзаци на початку секцій
 \usepackage{subfiles} % пакет, що полегшує вкладення файлів
-
 \usepackage{ulem} % гуманітарні закреслення й підкреслення (\sout, \xout)
 \usepackage{cancel} % похилі (математичні) закреслення (\cancel*to*)
-
 % \usepackage{etoolbox}
 
 \makeatletter
@@ -26,11 +24,9 @@
 }
 \makeatother
 
-
 %	математика	%
 \usepackage{amsmath}
 \usepackage{mathtools}
-
 \usepackage{breqn} % автоматичне перенесення частин математичних виразів
 \breqnsetup{
 	breakdepth={1},
@@ -42,14 +38,15 @@
 %	Мовні та шрифтові параметри	%
 \usepackage[ukrainian]{babel} %(Локалізація та переноси)
 
-\usepackage{iftex} % перевірка компілятора
-\ifXeTeX
-	\input{$HOME/Templates/lpnu_doc_templates/settings/font_styles.tex}
-\else
-	\usepackage[utf8]{inputenc} % input encoding
-	\usepackage[T2A]{fontenc} % font encoding
-	\usepackage{textcomp} % provide euro and other symbols
-\fi
+% \usepackage{iftex} % перевірка компілятора
+% \ifXeTeX
+% 	\input{$HOME/Templates/lpnu_doc_templates/settings/font_styles.tex}
+% \else
+% 	\usepackage[utf8]{inputenc} % input encoding
+% 	\usepackage[T2A]{fontenc} % font encoding
+% 	\usepackage{textcomp} % provide euro and other symbols
+% \fi
+
 \usepackage{microtype}
 
 %	графіка	%
@@ -71,17 +68,15 @@
 \usepackage{caption} % розширення функціоналу підписів
 \usepackage{subcaption} % підпідписи
 
-% Пакети, пов'язані з лістингом
-% --------------------------%
+%	Пакети для лістингів	%
 \usepackage{moreverb} % тюнінгований verbatim
 \let\verbatiminput=\verbatimtabinput % табуляція
 \def\verbatimtabsize{4\relax}
-% --------------------------%
 
 % бібліографія
 \usepackage[backend=biber]{biblatex}
 % style=authoryear-icomp
-\addbibresource{~/Documents/bibliography.bib}
+% \addbibresource{~/Documents/bibliography.bib}
 
 \input{~/Templates/lpnu_doc_templates/settings/baseinfo.tex}
 \input{~/Templates/lpnu_doc_templates/settings/misc.tex} % Q&A

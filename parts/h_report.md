@@ -1,12 +1,12 @@
 ---
+pdf-engine: xelatex
 header-includes:
-- \input{$HOME/Templates/lpnu_doc_templates/settings/preamble_md.tex}
+- \input{$HOME/Templates/lpnu_doc_templates/settings/preamble.tex}
 - \input{$HOME/Templates/lpnu_doc_templates/settings/minted_settings.tex}
-- \newcommand\Variant{VARIANT}
-- \newcommand\Date{DAY.MONTH.\the\year}
-- \newcommand\Discipline{DISCIPLINE}
-- \newcommand\Instructor{INSTRUCTOR}
 - \newcommand\Type{TYPE}
+- \Work{DISCIPLINE}
+- \renewcommand\Variant{VARIANT}
+- \newcommand\Date{DAY.MONTH.\the\year}
 - \newcommand\Number{NUMBER}
 - \newcommand\Topic{TOPIC}
 ---

@@ -1,17 +1,12 @@
-%-shell-escape, якщо використовуєте minted
+%shell-escape для minted
 \documentclass[a4paper, 12pt, oneside]{extarticle}
 \input{$HOME/Templates/lpnu_doc_templates/settings/preamble.tex}
-% якщо домахуються за Times New Roman, то
-% використовуєте xelatex і цей файл:
-\input{$HOME/Templates/lpnu_doc_templates/settings/font_styles.tex}
-\input{$HOME/Templates/lpnu_doc_templates/settings/minted_settings.tex}
+\addbibresource{~/Documents/uni/bibliography.bib}
 
-\newcommand\Variant{VARIANT}
+\renewcommand\Variant{VARIANT}
 \newcommand\Date{DAY.MONTH.\the\year}
-\newcommand\Discipline{DISCIPLINE}
-\newcommand\Instructor{INSTRUCTOR}
-
-\newcommand\Type{TYPE}
+\newcommand\Type{TYPE} % \Lab \Pract \RGR
+\Work{DISCIPLINE}
 \newcommand\Number{NUMBER}
 \newcommand\Topic{TOPIC}
 

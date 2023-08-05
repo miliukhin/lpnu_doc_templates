@@ -2,12 +2,11 @@
 \input{$HOME/Templates/lpnu_doc_templates/settings/preamble}
 \usepackage{etoolbox} % пакунок для розширеного програмування
 
-%	TODO:	рефакторинг	%
 \newtoggle{Report}
 \toggletrue{Report} % якщо true, то титулка як для звіту
 
-\newtoggle{RGR}
-\togglefalse{RGR} % якщо true, то відображається варіант замість теми
+\newtoggle{ShowVar}
+\togglefalse{ShowVar} % якщо true, то відображається варіант замість теми
 %\renewcommand\Department{<++>}
 
 \newcommand\Type{TYPE}
@@ -19,7 +18,7 @@
 \newcommand\Author{\Lname~\Initials}
 \newcommand\Position{POSITION}
 \newcommand\Instructor{INSTRUCTOR}
-\newcommand\Variant{VARIANT}
+\renewcommand\Variant{VARIANT}
 
 \begin{document}
 
