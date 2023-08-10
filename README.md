@@ -8,6 +8,8 @@
 
 основа титулки взята [звідси](https://github.com/pryamcem/lpnu-titlepage)
 
+**Зручно з [цим скриптом](https://github.com/miliukhin/dots/blob/master/.local/bin/gen-report)**
+
 # Як використовувати
 
 За замовчуванням усі шляхи налаштовані як `$UNI/_templates/...`,
