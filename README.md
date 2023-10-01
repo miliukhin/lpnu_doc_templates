@@ -10,7 +10,7 @@
 
 **Зручно з [цим скриптом](https://github.com/miliukhin/dots/blob/master/.local/bin/gen-report)**
 
-# Як використовувати
+## Як використовувати
 
 За замовчуванням усі шляхи налаштовані як `$UNI/_templates/...`,
 можете це змінити (за допомогою `sed`, наприклад --- `sed -i "s/\$UNI\/_templates/шось"`),
@@ -41,3 +41,5 @@ export UNI="шлях/до/репо/з/макулатурою"
 ```
 pdflatex -shell-escape НАЗВА_ФАЙЛУ.tex
 ```
+
+- https://www.ctan.org/pkg/eskdx для конструкторської документації

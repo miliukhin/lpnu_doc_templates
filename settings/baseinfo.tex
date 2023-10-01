@@ -4,7 +4,7 @@
 
 \newcommand\Institute{Інститут комп'ютерних наук та інформаційних технологій}
 \newcommand\Department{САПР}
-\newcommand\Group{ПП-14}
+\newcommand\Group{ПП-24}
 \newcommand\Variant{12}
 
 \usepackage{xstring}
@@ -16,7 +16,29 @@
 \newcommand{\Work}[1]{
 \IfStrEqCase{#1}{
 		{num}{
-			\newcommand\Discipline{Нумерікал мет}
+			\newcommand\Discipline{Чисельні методи}
+			\IfStrEqCase{\Type}{
+				{\Lab}{
+					\newcommand\Instructor{Чумакевич В. В.}
+				}
+				{\Pract}{
+					\newcommand\Instructor{<++>}
+				}
+			}
+		}
+		{db}{
+			\newcommand\Discipline{Організація баз даних та знань}
+			\IfStrEqCase{\Type}{
+				{\Lab}{
+					\newcommand\Instructor{Головацький Р. І.}
+				}
+				{\Pract}{
+					\newcommand\Instructor{<++>}
+				}
+			}
+		}
+		{stat}{
+			\newcommand\Discipline{Теорія ймовірності та математична статистика}
 			\IfStrEqCase{\Type}{
 				{\Lab}{
 					\newcommand\Instructor{<++>}
@@ -26,17 +48,27 @@
 				}
 			}
 		}
-		{db}{
-			<++>
-		}
-		{stat}{
-			<++>
-		}
 		{os}{
-			<++>
+			\newcommand\Discipline{Операційні системи}
+			\IfStrEqCase{\Type}{
+				{\Lab}{
+					\newcommand\Instructor{Мокрицька О.В.}
+				}
+				{\Pract}{
+					\newcommand\Instructor{<++>}
+				}
+			}
 		}
 		{web}{
-			<++>
+			\newcommand\Discipline{Технології веброзробки та дизайну}
+			\IfStrEqCase{\Type}{
+				{\Lab}{
+					\newcommand\Instructor{<++>}
+				}
+				{\Pract}{
+					\newcommand\Instructor{<++>}
+				}
+			}
 		}
 	}
 }
