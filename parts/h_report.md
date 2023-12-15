@@ -1,8 +1,8 @@
 ---
 pdf-engine: xelatex
 header-includes:
-- \input{$UNI/_templates/settings/preamble.tex}
-- \input{$UNI/_templates/settings/minted_settings.tex}
+- \input{$UNI/.templates/settings/preamble.tex}
+- \input{$UNI/.templates/settings/minted_settings.tex}
 - \newcommand\Type{TYPE}
 - \Work{DISCIPLINE}
 - \renewcommand\Variant{VARIANT}
@@ -11,7 +11,7 @@ header-includes:
 - \newcommand\Topic{TOPIC}
 ---
 
-\input{$UNI/_templates/parts/header.tex}
+\input{$UNI/.templates/parts/header.tex}
 <++>
 
 # Індивідуальне завдання
