@@ -52,6 +52,7 @@
 %	графіка	%
 \usepackage{graphicx} % для додання картинок
 \graphicspath{{images/}}
+\graphicspath{{img/}}
 
 \usepackage{tikz}
 \usetikzlibrary
@@ -83,3 +84,8 @@
 
 \input{$UNI/_templates/settings/baseinfo.tex}
 \input{$UNI/_templates/settings/misc.tex} % Q&A
+
+% щоб утиснути більше рисунків
+\setcounter{topnumber}{8}
+\setcounter{bottomnumber}{8}
+\setcounter{totalnumber}{8}
