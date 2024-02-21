@@ -7,6 +7,9 @@
 \newcommand\Group{ПП-24}
 \newcommand\Variant{6}
 
+% 5 підгр
+% 13 гр
+
 \usepackage{xstring}
 
 % ця команда отримує позначення дисципліни та обирає приймача роботи.
@@ -64,6 +67,17 @@
 			\IfStrEqCase{\Type}{
 				{\Lab}{
 					\newcommand\Instructor{<++>}
+				}
+				{\Pract}{
+					\newcommand\Instructor{<++>}
+				}
+			}
+		}
+		{math_research}{
+			\newcommand\Discipline{Математичні методи дослідження операцій}
+			\IfStrEqCase{\Type}{
+				{\Lab}{
+					\newcommand\Instructor{Здобицький А.Я.}
 				}
 				{\Pract}{
 					\newcommand\Instructor{<++>}
