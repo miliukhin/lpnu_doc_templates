@@ -5,7 +5,7 @@
 \newcommand\Institute{Інститут комп'ютерних наук та інформаційних технологій}
 \newcommand\Department{САПР}
 \newcommand\Group{ПП-24}
-\newcommand\Variant{6}
+\newcommand\Variant{5}
 
 % 5 підгр
 % 13 гр
@@ -84,5 +84,71 @@
 				}
 			}
 		}
+		{banal}{
+			\newcommand\Discipline{<++>}
+			\IfStrEqCase{\Type}{
+				{\Lab}{
+					\newcommand\Instructor{<++>}
+				}
+				{\Pract}{
+					\newcommand\Instructor{<++>}
+				}
+			}
+		}
+		{datamining}{
+			\newcommand\Discipline{Системи інтелектуального аналізу та візуалізації даних}
+			\IfStrEqCase{\Type}{
+				{\Lab}{
+					\newcommand\Instructor{Том'юк В.В.}
+				}
+				{\Pract}{
+					\newcommand\Instructor{<++>}
+				}
+			}
+		}
+		{nets}{
+			\newcommand\Discipline{Комп'ютерні мережі}
+			\IfStrEqCase{\Type}{
+				{\Lab}{
+					\newcommand\Instructor{асистент Спас Н.Я.}
+				}
+				{\Pract}{
+					\newcommand\Instructor{<++>}
+				}
+			}
+		}
+		{pm}{
+			\newcommand\Discipline{<++>}
+			\IfStrEqCase{\Type}{
+				{\Lab}{
+					\newcommand\Instructor{<++>}
+				}
+				{\Pract}{
+					\newcommand\Instructor{<++>}
+				}
+			}
+		}
+		{signals}{
+			\newcommand\Discipline{Цифрова обробка сигналів і зображень}
+			\IfStrEqCase{\Type}{
+				{\Lab}{
+					\newcommand\Instructor{Зачек О.І.}
+				}
+				{\Pract}{
+					\newcommand\Instructor{<++>}
+				}
+			}
+		}
+		% {<++>}{
+		% 	\newcommand\Discipline{<++>}
+		% 	\IfStrEqCase{\Type}{
+		% 		{\Lab}{
+		% 			\newcommand\Instructor{<++>}
+		% 		}
+		% 		{\Pract}{
+		% 			\newcommand\Instructor{<++>}
+		% 		}
+		% 	}
+		% }
 	}
 }

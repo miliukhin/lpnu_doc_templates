@@ -6,9 +6,9 @@ header-includes:
 - \newcommand\Type{TYPE}
 - \Work{DISCIPLINE}
 - \renewcommand\Variant{VARIANT}
-- \newcommand\Date{DAY.MONTH.\the\year}
+- \newcommand\Date{<++>.\the\month.\the\year}
 - \newcommand\Number{NUMBER}
-- \newcommand\Topic{TOPIC}
+- \newcommand\Topic{<++>}
 ---
 
 \input{$UNI/.templates/parts/header.tex}
