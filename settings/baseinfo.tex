@@ -5,10 +5,10 @@
 \newcommand\Institute{Інститут комп'ютерних наук та інформаційних технологій}
 \newcommand\Department{САПР}
 \newcommand\Group{ПП-24}
-\newcommand\Variant{5}
+\newcommand\Variant{14}
 
 % 5 підгр
-% 13 гр
+% 14 гр
 
 \usepackage{xstring}
 
@@ -139,16 +139,71 @@
 				}
 			}
 		}
-		% {<++>}{
-		% 	\newcommand\Discipline{<++>}
-		% 	\IfStrEqCase{\Type}{
-		% 		{\Lab}{
-		% 			\newcommand\Instructor{<++>}
-		% 		}
-		% 		{\Pract}{
-		% 			\newcommand\Instructor{<++>}
-		% 		}
-		% 	}
-		% }
+		{infosec}{
+			\newcommand\Discipline{Технолоогії захисту інформації}
+			\IfStrEqCase{\Type}{
+				{\Lab}{
+					\newcommand\Instructor{Оринчак М.Р.}
+				}
+				{\Pract}{
+					\newcommand\Instructor{<++>}
+				}
+			}
+		}
+		{ba}{
+			\newcommand\Discipline{Бізнес-аналіз та розробка технологічних продуктів}
+			\IfStrEqCase{\Type}{
+				{\Lab}{
+					\newcommand\Instructor{Василишин Б.С.}
+				}
+				{\Pract}{
+					\newcommand\Instructor{<++>}
+				}
+			}
+		}
+		{andron}{
+			\newcommand\Discipline{Проєктування та розробка мобільних додатків}
+			\IfStrEqCase{\Type}{
+				{\Lab}{
+					\newcommand\Instructor{Белей О.І.}
+				}
+				{\Pract}{
+					\newcommand\Instructor{<++>}
+				}
+			}
+		}
+		{mp}{
+			\newcommand\Discipline{Мікропроцесорні системи}
+			\IfStrEqCase{\Type}{
+				{\Lab}{
+					\newcommand\Instructor{Головатий А.І.}
+				}
+				{\Pract}{
+					\newcommand\Instructor{<++>}
+				}
+			}
+		}
+		{emb}{
+			\newcommand\Discipline{Програмування інтелектуальних вбудованих систем}
+			\IfStrEqCase{\Type}{
+				{\Lab}{
+					\newcommand\Instructor{Коземчук І.}
+				}
+				{\Pract}{
+					\newcommand\Instructor{<++>}
+				}
+			}
+		}
+		{<++>}{
+			\newcommand\Discipline{<++>}
+			\IfStrEqCase{\Type}{
+				{\Lab}{
+					\newcommand\Instructor{<++>}
+				}
+				{\Pract}{
+					\newcommand\Instructor{<++>}
+				}
+			}
+		}
 	}
 }
