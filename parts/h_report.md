@@ -18,19 +18,16 @@ header-includes:
 
 <++>
 
-## Завдання 1
-
-<++>
-
-## Завдання 2
-
-<++>
-
 # Етапи розв'язку
 
-<++>
+## Завдання 1
+\inputminted{c}{t1/t1.ino}
 
-BODY
+## Завдання 2
+\inputminted{c}{t2/t2.ino}
+
+## Завдання 3
+\inputminted{c}{t3/t3.ino}
 
 # Висновок
 
