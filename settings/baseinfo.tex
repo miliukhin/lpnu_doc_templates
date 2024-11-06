@@ -194,6 +194,17 @@
 				}
 			}
 		}
+		{potoky}{
+			\newcommand\Discipline{Технології розподілених систем та паралельних обчислень}
+			\IfStrEqCase{\Type}{
+				{\Lab}{
+					\newcommand\Instructor{Лис С. Ю.}
+				}
+				{\Pract}{
+					\newcommand\Instructor{<++>}
+				}
+			}
+		}
 		{<++>}{
 			\newcommand\Discipline{<++>}
 			\IfStrEqCase{\Type}{
