@@ -1,0 +1,109 @@
+#!/bin/sh
+
+# This script will compile or run another finishing operation on a document. I
+# have this script run via vim.
+#
+# Compiles .tex. groff (.mom, .ms), .rmd, .md, .org.  Opens .sent files as sent
+# presentations. Runs scripts based on extension or shebang.
+#
+# Note that .tex files which you wish to compile with XeLaTeX should have the
+# string "xelatex" somewhere in a comment/command in the first 5 lines.
+
+file=$(readlink -f "$1")
+dir=${file%/*}
+base="${file%.*}"
+ext="${file##*.}"
+
+cd "$dir" || exit 1
+
+textype() { \
+	textarget="$(getcomproot "$file" || echo "$file")"
+	echo "$textarget"
+	command="pdflatex"
+	argument=""
+	( head -n5 "$textarget" | grep -qi 'xelatex' ) && command="xelatex"
+	( head -n8 "$textarget" | grep -qi 'shell-escape' ) && argument="-shell-escape"
+	$command $argument --output-directory="${textarget%/*}" "${textarget%.*}"
+		grep -qi addbibresource "$textarget" &&
+		biber --input-directory "${textarget%/*}" "${textarget%.*}" &&
+		$command --output-directory="${textarget%/*}" "${textarget%.*}" &&
+		$command --output-directory="${textarget%/*}" "${textarget%.*}"
+}
+
+case "$ext" in
+	# Try to keep these cases in alphabetical order.
+	[0-9]) preconv "$file" | refer -PS -e | groff -mandoc -T pdf > "$base".pdf ;;
+	c) cc "$file" -o "$base" && "$base" || cc -lm "$file" -o "$base" && "$base" ;;
+	cpp) g++ "$file" -o "$base" && "$base" ;;
+	cs) mcs "$file" && mono "$base".exe ;;
+	dot) dot "$file" -Tpdf -o "$base".pdf ;;
+	er) eralchemy -i "$file" -o "$base".pdf ;;
+	go) go run "$file" ;;
+	gv) dot "$file" -Tpdf -o "$base".pdf ;;
+	h) sudo make install ;;
+	java) javac -d classes "$file" && java -cp classes "${1%.*}" ;;
+	m) octave "$file" ;;
+	md)	if  [ -x "$(command -v lowdown)" ]; then
+			lowdown --parse-no-intraemph "$file" -Tms | groff -mpdfmark -ms -kept -T pdf > "$base".pdf
+		elif [ -x "$(command -v groffdown)" ]; then
+			groffdown -i "$file" | groff -T pdf > "$base".pdf
+		else
+			target="$(getcomproot "$file" || echo "$file")"
+ 			( head -n8 "$target" | grep -qi 'aspectratio:' ) && type="beamer"
+			( head -n8 "$target" | grep -qi 'xelatex' ) && type="xelatex"
+			if [ "$type" = "beamer" ]; then
+				pandoc -s -f markdown --pdf-engine=xelatex \
+				-t beamer \
+				-V urlcolor:blue \
+				-V fontenc=T2A \
+				-V mainfont="Liberation Sans" \
+				-V monofont="Iosevka Fixed Curly" \
+				-V linkcolor:gray \
+				-V lang=uk-UA -o "$base".pdf "$file"
+
+			elif [ "$type" = "xelatex" ]; then
+			pandoc -f markdown \
+				--pdf-engine=xelatex \
+				--template $UNI/.templates/settings/unidoc.latex \
+				--pdf-engine-opt=-shell-escape \
+				--highlight-style $UNI/.templates/settings/code.theme  \
+				-V geometry:a4paper \
+				-V linkcolor:blue \
+				-V fontenc=T2A \
+				--citeproc \
+				-V geometry:margin=2cm,top=1.5cm \
+				-V mainfont="Linux Libertine" \
+				-V monofont="Iosevka Fixed Curly" \
+				-V fontsize=12pt -V lang=uk-UA -o "$base".pdf "$file"
+			else
+			pandoc -f markdown \
+				--template $UNI/.templates/settings/unidoc.latex \
+				--citeproc \
+				--pdf-engine=pdflatex \
+				--pdf-engine-opt=-shell-escape \
+				-V geometry:a4paper \
+				-V fontenc=T2A \
+				-V geometry:margin=2cm \
+				-V fontsize=12pt \
+				-V linkcolor:blue \
+				-o "$base".pdf "$file"
+			fi
+
+		fi ; ;;
+	mom) preconv "$file" | refer -PS -e | groff -mom -kept -T pdf > "$base".pdf ;;
+	ms) preconv "$file" | refer -PS -e | groff -me -ms -kept -T pdf > "$base".pdf ;;
+	org) emacs "$file" --batch -u "$USER" -f org-latex-export-to-pdf ;;
+	pas) fpc "$file" -o"$base" && "$base" ;;
+	php) php -n -f "$file" ;;
+	puml) plantuml "$file" ;;
+	gnuplot|plt) gnuplot -p "$file" > "$base".pdf ;;
+	py) python "$file" ;;
+	r) Rscript "$file" ;;
+	[rR]md) Rscript -e "rmarkdown::render('$file', quiet=TRUE)" ;;
+	rs) cargo build ;;
+	sass) sassc -a "$file" "$base".css ;;
+	scad) openscad -o "$base".stl "$file" ;;
+	sent) setsid -f sent "$file" 2>/dev/null ;;
+	tex) textype "$file" ;;
+	*) sed -n '/^#!/s/^#!//p; q' "$file" | xargs -r -I % "$file" ;;
+esac

@@ -6,7 +6,7 @@ header-includes:
 - \newcommand\Type{TYPE}
 - \Work{DISCIPLINE}
 - \renewcommand\Variant{VARIANT}
-- \newcommand\Date{<++>.\the\month.\the\year}
+- \newcommand\Date{\the\day.\the\month.\the\year}
 - \newcommand\Number{NUMBER}
 - \newcommand\Topic{<++>}
 ---
@@ -20,33 +20,14 @@ header-includes:
 
 # Етапи розв'язку
 
-## Завдання 1
-\inputminted{c}{t1/t1.ino}
+BODY
 
-## Завдання 2
-\inputminted{c}{t2/t2.ino}
-
-## Завдання 3
-\inputminted{c}{t3/t3.ino}
+\clearpage
 
 # Висновок
 
 <++>
 
 # Відповіді на контрольні запитання
-\begin{itemize}
-	\question <++>
-	\answer <++>
 
-	\question <++>
-	\answer <++>
-
-	\question <++>
-	\answer <++>
-
-	\question <++>
-	\answer <++>
-
-	\question <++>
-	\answer <++>
-\end{itemize}
+<++>
