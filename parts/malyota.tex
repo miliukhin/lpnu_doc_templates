@@ -1,0 +1,89 @@
+%xelatex
+\documentclass[12pt, final]{extreport}
+
+\usepackage[backend=biber, style=authoryear-icomp]{biblatex}
+\addbibresource{bib.bib}
+%\usepackage[T2A]{fontenc}
+%\usepackage[english,ukrainian]{babel}
+\usepackage{fontspec}
+\setmainfont{Nimbus Roman}
+\usepackage{graphicx}
+\usepackage{blindtext}
+%\usepackage[a4paper,margin=0.5in]{geometry}
+\usepackage[a4paper]{geometry}
+\newcommand\Margins{\newgeometry{top=1.5cm,bottom=2cm,right=2cm,left=2cm}}
+\begin{document}
+\newgeometry{top=1cm,bottom=1cm,right=1.5cm,left=1.5cm}
+
+\pagestyle{empty}
+\begin{center}
+
+	{\fontsize{14}{24}\selectfont МІНІСТЕРСТВО ОСВІТИ І НАУКИ УКРАЇНИ
+
+	НАЦІОНАЛЬНИЙ УНІВЕРСИТЕТ «ЛЬВІВСЬКА ПОЛІТЕХНІКА»
+
+	Інститут комп'ютерних наук та інформаційних технологій
+
+	}
+
+	\vspace{90.4pt} %120.4+16.1
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=6.5cm,keepaspectratio]{<++>}
+	\end{figure}
+
+	{\fontsize{18}{29}\selectfont{Звіт}
+
+	{до <++> роботи № 3}
+
+	{З дисципліни}
+
+	{``Дискретна математика''}
+
+	{на тему:}
+
+	{``<++>''}
+
+	}
+\end{center}
+
+\vspace{12.1pt} %30.1pt
+	{\fontsize{14}{22.4}\selectfont
+\begin{flushright}
+	\textit{Виконав:}
+
+	\textit{студент групи <++>}
+
+	\textit{<++>}
+
+	\textit{Прийня<++>:}
+
+	\textit{<++>}
+\end{flushright}
+\vspace{37.4pt} %100.4
+\begin{center}
+\textit{Львів-2022}
+\vspace{37.4pt} %100.4
+\end{center}
+	}
+\clearpage
+%{\fontsize{18}{20.7}\selectfont \textbf{Лабораторна робота №1}}
+{\fontsize{14}{16.1}\selectfont
+\textbf{Мета:}
+<++>
+
+\vspace{16pt}
+\centering \textbf{Варіант 12}
+\section{<++>}
+\begin{figure}[h]
+	\centering
+%	\includegraphics[width=17cm]{1.png}
+%	\includegraphics[width=5cm]{2.png}
+\end{figure}
+
+\textbf{Висновок:}
+<++>
+}
+\blindtext
+
+\end{document}

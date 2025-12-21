@@ -1,0 +1,83 @@
+#!/bin/sh
+
+# Copies one of the templates into current directory
+# and adjusts it based on the path, then opens in text editor
+[ "$1" = "help" ] && \
+echo "usage: gen-report [<args>], if the path to active dir is as:
+	.../discipline/type/smth_number
+	.../discipline/type_number
+or manually: genreport [<discipline>] [<type>] [<number>]" && \
+	exit 0
+
+template_path="$UNI/.templates/"
+
+lname=$(sed --silent '/Lname/ {s/.*{//; s/}//; p; q}' "$template_path/settings/baseinfo.tex")
+group=$(sed --silent '/Group/ {s/.*{//; s/}//; p; q}' "$template_path/settings/baseinfo.tex")
+variant=$(sed --silent '/Variant/ {s/.*{//; s/}//; p; q}' "$template_path/settings/baseinfo.tex")
+
+discipline=$(basename $(dirname $(dirname $(pwd))) || $1)
+work_type=$(basename $(dirname $(pwd)) || $2)
+number=$(basename $(pwd) | sed "s/[^0-9]*_//" || $3)
+
+# Якщо немає директорії для робіт, а є тільки для кожної з них, то
+[ "$discipline" = uni ] && \
+	discipline=$(echo $work_type | sed "s/_[0-9]*//") && \
+	work_type=$(basename $(pwd) | sed "s/_[0-9]*//")
+# (бо окремий каталог для презентацій, якщо є тільки одна, очевидно, не потрібен)
+
+filename="${lname}_${group}_${work_type}_${number}.md"
+[ "$discipline" = "signals" ] && filename="Miliukhin_PP-24_${work_type}_${number}.md"
+
+case "$work_type" in
+	lab*) echo LAB ;;
+	pres*) usebeamer=true ;;
+	rgr*) usetitlepage=true ;;
+esac;
+
+type_command="\\$(echo $work_type | sed "s/[^ _-]*/\u&/g")"
+
+if [ "$usetitlepage" = true ] ; then
+	cp "$template_path/parts/t_report.md" "$filename"
+elif [ "$usebeamer" = true ] ; then
+	cp "$template_path/parts/presentation.tex" "$filename"
+else
+	cp "$template_path/parts/h_report.md" "$filename"
+fi
+
+## create body of listings and graphics
+
+codefiles=$(find . -maxdepth 2 -regex '.*/*\.\(cpp\|cs\|ino\|c\|py\|sh\|java\)$')
+outs=$(find . -maxdepth 2 -iname out)
+
+for file in $codefiles ; do
+	ext="${file##*.}"
+	[ $ext = "ino" ] && ext=cpp
+	listings=$listings"### Файл $file: \n\\\inputminted{$ext}{$file}\n\n"
+done
+
+for file in $outs ; do
+	ext="${file##*.}"
+	listings=$listings"### Вивід $file: \n\\\inputminted{text}{$file}\n\n"
+done
+
+
+echo -e $listings
+
+graphics=$(find . -regex '.*/*\.\(jpg\|png\|svg\)$')
+
+for file in $graphics ; do
+	ext="${file##*.}"
+	figures=$figures"![<++>]($file)\n\n"
+done
+
+echo -e $figures
+
+body=$listings"\n\\\clearpage\n# Рисунки\n$figures"
+
+sed -i "s|NUMBER|$number|g;
+s|VARIANT|$variant|g;
+s|TYPE|\\$type_command|g;
+s|BODY|${body}|g;
+s|DISCIPLINE|$discipline|g" "$filename"
+
+$EDITOR "$filename"

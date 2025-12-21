@@ -1,0 +1,67 @@
+\newgeometry{top=1cm,bottom=1cm,right=1.5cm,left=1.5cm}
+\newcommand{\LINE}{\rule{\linewidth}{0.4mm}}
+\begin{titlepage}
+	\center
+
+	\Large
+	\textsc{МІНІСТЕРСТВО ОСВІТИ І НАУКИ УКРАЇНИ}\\
+	\textsc{НАЦІОНАЛЬНИЙ УНІВЕРСИТЕТ ``ЛЬВІВСЬКА ПОЛІТЕХНІКА''}\\
+	\large
+	\iftoggle{ShowVar} {}
+	{
+		{\Institute}\\
+	}
+	{кафедра \Department}\\
+	[1.5cm]
+	\normalsize
+
+	\includegraphics[width=.5\textwidth]{$UNI/.templates/pix/ikni-logo.pdf}\\[1.5cm]
+
+	\iftoggle{Report}
+	{
+		\textsc{\Huge\bfseries СЕМЕСТРОВИЙ ЗВІТ}\\
+		\textsc{\Large до \Type \, \Number}\\
+	}
+	{
+		\textsc{\LARGE\bfseries \Type~\Number}\\
+	}
+	\textsc{\Large з курсу:} \\
+
+	{
+	% \LINE\\[0.2cm]
+	\vspace{0.2cm}
+	\Large
+	\textsc{\bfseries \Discipline}\\[0cm]
+	\normalsize
+	\vspace{1cm}
+	}
+
+	\iftoggle{ShowTopic}
+	{
+	\textsc{\Large на тему:} \\
+	\LINE\\[0.2cm]
+	\Large
+	\textsc{\bfseries \Topic}\\[0cm]
+	\normalsize
+	\LINE\\[1cm]
+	}
+	{
+	}
+
+	\begin{flushright}
+		\Large
+		\textit{Виконав}\\
+		% \normalsize
+		\Class \; \textsc{\Author}
+
+		\Large
+		\textit{Перевірив(ла)}\\
+		% \normalsize
+		\Position \; \textsc{\Instructor}
+	\end{flushright}
+
+	\vfill
+	\Large
+	Львів	\the\year{}
+\end{titlepage}
+\Margins

@@ -1,0 +1,19 @@
+% Minted --- пакет для створення кольорових лістингів.
+% Потребує python-pygments, просто встановлюєте,
+% використовуючи свій менеджер пакунків.
+% Також запускайте *tex із опцією -shell-escape
+\usepackage{minted}
+
+% перенесення та нумерація рядків
+\setminted{breaklines, mathescape} %texcl
+
+% Стилі, які я відібрав собі (pygmentize -L styles)
+% \usemintedstyle{borland}
+% \usemintedstyle{emacs}
+% \usemintedstyle{friendly_grayscale}
+% \usemintedstyle{vs}
+\usemintedstyle{trac}
+
+    %mathescape: enables math mode in code comments.
+    %rulecolor: changes the colour of the frame.
+    %showspaces: enables a special character to make spaces visible.

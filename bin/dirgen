@@ -1,0 +1,13 @@
+#!/bin/sh
+# generate given number of directories of a given name
+[ -z $1 ] || [ -z $2 ] && echo "$0 <discipline_dir> <work_type> <number>" && exit 1 ;
+
+discipline="$1"
+work_type="$2"
+
+max=$3
+ x=1
+while [ $x -lt $max ]
+ do mkdir -pv "$discipline/${work_type}/${work_type}_$x"
+ true $(( x=x+1 ))
+ done

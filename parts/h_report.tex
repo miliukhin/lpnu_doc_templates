@@ -1,0 +1,58 @@
+%shell-escape для minted
+\documentclass[a4paper, 12pt, oneside]{extarticle}
+\input{$UNI/.templates/settings/preamble.tex}
+\addbibresource{~/Documents/uni/bibliography.bib}
+
+\renewcommand\Variant{VARIANT}
+\newcommand\Date{DAY.MONTH.\the\year}
+\newcommand\Type{TYPE} % \Lab \Pract \RGR
+\Work{DISCIPLINE}
+\newcommand\Number{NUMBER}
+\newcommand\Topic{TOPIC}
+
+\begin{document}
+\Margins
+
+\input{$UNI/.templates/parts/header.tex}
+
+\section*{Індивідуальне завдання}
+
+<++>
+
+\subsection*{Завдання 1}
+
+<++>
+
+\subsection*{Завдання 2}
+
+<++>
+
+\section*{Етапи розв'язку}
+
+<++>
+
+BODY
+
+\section*{Висновок}
+
+<++>
+
+\section*{Відповіді на контрольні запитання}
+\begin{itemize}
+	\question <++>
+	\answer <++>
+
+	\question <++>
+	\answer <++>
+
+	\question <++>
+	\answer <++>
+
+	\question <++>
+	\answer <++>
+
+	\question <++>
+	\answer <++>
+\end{itemize}
+
+\end{document}

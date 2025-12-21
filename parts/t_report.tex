@@ -1,0 +1,29 @@
+\documentclass[a4paper, 12pt, oneside]{extarticle}
+\input{$UNI/.templates/settings/preamble}
+\usepackage{etoolbox} % пакунок для розширеного програмування
+
+\newtoggle{Report}
+\toggletrue{Report} % якщо true, то титулка як для звіту
+
+\newtoggle{ShowVar}
+\togglefalse{ShowVar} % якщо true, то відображається варіант замість теми
+%\renewcommand\Department{<++>}
+
+\newcommand\Type{TYPE}
+\newcommand\Number{NUMBER}
+\newcommand\Discipline{DISCIPLINE}
+\newcommand\Topic{TOPIC}
+
+\newcommand\Class{студент групи \Group}
+\newcommand\Author{\Lname~\Initials}
+\newcommand\Position{POSITION}
+\newcommand\Instructor{INSTRUCTOR}
+\renewcommand\Variant{VARIANT}
+
+\begin{document}
+
+\input{$UNI/.templates/parts/titlepage.tex}
+
+<++>
+
+\end{document}

@@ -1,0 +1,60 @@
+\newgeometry{top=1cm,bottom=1cm,right=1.5cm,left=1.5cm}
+\newcommand{\LINE}{\rule{\linewidth}{0.4mm}}
+\begin{titlepage}
+	\center
+
+	\textsc{МІНІСТЕРСТВО ОСВІТИ І НАУКИ УКРАЇНИ}\\
+	\textsc{Національний Університет ``Львівська Політехніка''}\\
+	\small
+	\iftoggle{ShowVar} {}
+	{
+		{\Institute}\\
+	}
+	{кафедра \Department}\\
+	[1.5cm]
+	\normalsize
+
+	\includegraphics[width=.5\textwidth]{$UNI/.templates/lpnu_logo.png}\\[1.5cm]
+
+	\iftoggle{Report}
+	{
+		\textsc{\LARGE\bfseries ЗВІТ}\\
+		\textsc{ до \Type \, \No\Number}\\
+	}
+	{
+		\textsc{\LARGE\bfseries \Type~\Number}\\
+	}
+  з дисципліни: ``\Discipline''\\
+
+	\iftoggle{ShowVar}
+	{
+	\LINE\\[0.2cm]
+	\large
+		\textsc{\bfseries Варіант \Variant}\\[0cm]
+	\LINE\\[1cm]
+	}
+	{
+	\LINE\\[0.2cm]
+	\large
+	\textsc{\bfseries \Topic}\\[0cm]
+	\normalsize
+	\LINE\\[1cm]
+	}
+
+
+	\begin{flushright}
+		\large
+		\textit{Виконав}\\
+		\normalsize
+		\Class \; \textsc{\Author}
+
+		\large
+		\textit{Перевірив(ла)}\\
+		\normalsize
+		\Position \; \textsc{\Instructor}
+	\end{flushright}
+
+	\vfill
+	Львів	\the\year{}
+\end{titlepage}
+\Margins
