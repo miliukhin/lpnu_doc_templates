@@ -1,0 +1,58 @@
+\begin{titlepage}
+    \centering
+    \vspace*{-1cm}
+
+    \textbf{Міністерство освіти і науки України\\
+    Національний технічний університет України\\
+    <<Київський політехнічний інститут імені Ігоря Сікорського>>\\
+    Факультет інформатики та обчислювальної техніки\\
+    Кафедра \Department \\}
+    
+    \vspace*{6cm}
+    
+    \textbf{Лабораторна робота №\Number \\}
+    \vspace{0.25cm}
+    з дисципліни <<\Discipline>> \\
+    \ifdefined\Topic
+      \vspace{0.1cm}
+      Тема: <<\Topic>>
+    \fi
+    
+    \vspace{4cm}
+
+    \begin{tabular}{ll}
+      \begin{minipage}[t]{0.54\linewidth}
+        \linespread{1.5}\selectfont
+        Виконав: \\
+        студент групи \Group \\
+        \Lname{} \Fname{} \\
+        \ifdefined\NList
+          номер у списку групи: \Nlist \\
+        \fi
+        \ifdefined\workDate 
+          Дата здачі \workDate \\
+        \fi
+        \ifdefined\point
+          Захищено з балом \point \\
+        \fi
+      \end{minipage}
+      &
+      \begin{minipage}[t]{0.4\linewidth}
+        \linespread{1.5}\selectfont
+        \ifdefined\female % define this variable in baseinfo.tex file
+          Перевірила: \\
+        \else
+          \ifdefined\male
+            Перевірив: \\
+          \fi
+        \fi
+        \ifdefined\academicRank
+          \academicRank \\
+        \fi
+        \Instructor
+      \end{minipage}
+    \end{tabular}
+
+    \vfill
+    Київ \the\year 
+\end{titlepage}
